@@ -54,6 +54,14 @@ public class GruntController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.transform.tag == "Player")
+        {
+            print("Gameover");
+        }
+    }
+
     IEnumerator Waiting()
     {
         yield return new WaitForSeconds(3f);

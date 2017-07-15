@@ -12,7 +12,7 @@ public class InputManager3D : MonoBehaviour
     float mouseYAxis = 0;                        // up or down movement of mouse (camera). Positive numb = up, Negative numb = down.
     bool cameraLock = true;                      // constantly lock the cursor in the center
     bool wallDraggingStarted;
-    public bool isHiding;
+    public bool isHiding;           
     public GameObject hands;
 
     void Awake()
