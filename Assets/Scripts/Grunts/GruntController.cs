@@ -66,7 +66,6 @@ public class GruntController : MonoBehaviour
         if (other.transform.tag == "Player")
         {
             loseCondition.isFound = true;
-            gameObject.GetComponent<AudioSource>().Stop();
         }
     }
 
