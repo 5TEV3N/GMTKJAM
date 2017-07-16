@@ -16,7 +16,7 @@ public class GruntController : MonoBehaviour
     public Animator gruntAnimController;
     public AnimationCurve movementJuice;
     public float smoothValue;
-
+    public float switchValue = 3f;
     private Transform playerPosition;
 
     private void Awake()
@@ -77,13 +77,13 @@ public class GruntController : MonoBehaviour
 
     IEnumerator ToTarget()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(switchValue);
         if (finishedCycle == true) { finishedCycle = false;}
     }
 
     IEnumerator BackToOrigin()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(switchValue);
         if (finishedCycle == false) { finishedCycle = true;}
     }
 }
