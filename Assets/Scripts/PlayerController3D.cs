@@ -25,16 +25,22 @@ public class PlayerController3D : MonoBehaviour
     void Awake()
     {
         inputManager = GameObject.FindGameObjectWithTag("Player").GetComponent<InputManager3D>();
+        originalMaxVelocity = maxVelocity;
     }
     
     void Update()
     {
         valOfVelocity = rb.velocity.magnitude;
+
+        if (inputManager.isHiding == true)
+        {
+            maxVelocity = 5f;
+        }
+        else { maxVelocity = originalMaxVelocity; }
     }
 
     public void PlayerMove(float xAxis, float zAxis)
     {
-
         if (xAxis != 0)
         {
             if (xAxis > 0)
