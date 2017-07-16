@@ -5,6 +5,8 @@ using UnityEditor.Animations;
 
 public class GruntController : MonoBehaviour
 {
+    LoseCondition loseCondition;
+
     public GameObject startingPosition;
     public GameObject targetDestination;
     public bool finishedCycle;
@@ -16,6 +18,11 @@ public class GruntController : MonoBehaviour
     public float smoothValue;
 
     private Transform playerPosition;
+
+    private void Awake()
+    {
+        loseCondition = GameObject.FindGameObjectWithTag("GameManagerTag").GetComponent<LoseCondition>();
+    }
 
     private void FixedUpdate()
     {
@@ -58,7 +65,8 @@ public class GruntController : MonoBehaviour
     {
         if (other.transform.tag == "Player")
         {
-            print("Gameover");
+            loseCondition.isFound = true;
+            gameObject.GetComponent<AudioSource>().Stop();
         }
     }
 

@@ -55,13 +55,13 @@ public class InputManager3D : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            isHiding = true;
-            hands.SetActive(true);
+            isHiding = false;
+            hands.SetActive(false);
         }
         else
         {
-            isHiding = false;
-            hands.SetActive(false);
+            isHiding = true;
+            hands.SetActive(true);
         }
     }
 }

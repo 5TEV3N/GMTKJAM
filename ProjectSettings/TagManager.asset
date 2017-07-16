@@ -6,6 +6,8 @@ TagManager:
   tags:
   - HandsTag
   - GruntTag
+  - UITag
+  - GameManagerTag
   layers:
   - Default
   - TransparentFX
